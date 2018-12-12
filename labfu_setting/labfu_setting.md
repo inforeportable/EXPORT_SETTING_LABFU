@@ -4,7 +4,7 @@ Update Version 2018-12-11
 
 ------
 
-ที่มาของปัญหา
+# ที่มาของปัญหา
 
 ​	โครงสร้างมาตรฐานข้อมูลด้านการแพทย์และสุขภาพ กระทรวงสาธารณสุข หรือ โครงสร้างมาตรฐานข้อมูล 43 แฟ้ม ตั้งแต่ปีงบประมาณ 2560 เป็นต้นมา  มีการปรับเปลี่ยนที่สำคัญคือ มีการเพิ่มรหัสมาตรฐาน ในแฟ้ม  LABFU เพื่อให้รองกับจำนวน ผลตรวจทางห้องปฏิบัติการให้มากขึ้น จากเดิม ที่มีอยู่ 21 รายการ และเกี่ยวข้องกับแฟ้ม CHRONIC หรือ แฟ้มทะเบียนผู้ป่วยโรคเรื้งรังเท่านั้น ให้เพิ่มมากขึ้น เพื่อให้รองรับกับการรายงานผล ร่วมกับ กิจกรรมด้านอื่นๆด้วย เช่น ผลตรวจ VDRL ในกลุ่มหญิงตั้งครรภ์ หรือ ผลตรวจการตรวจหาค่าฮีมาโตคริตในเลือด  ในกลุ่มเด็กเล็ก หรือ เด็กวัยเรียนเพื่อหาความเสี่ยงต่อภาวะซีดเป็นต้น
 
@@ -79,14 +79,192 @@ Update Version 2018-12-11
 
 ------
 
-เริ่มต้น ขั้นตอนการแก้ไข
+# ขั้นตอนการแก้ไข
 
 1. ติดตั้งโปรแกรมที่เกี่ยวข้องให้ครบถ้วน
-  1.1 BMSHOSxPXE4CloudApplicationInstaller.exe
-  1.2 HOSxPXE PCU(สีฟ้า)
-  1.3 BMSHOSxPStandard43Export(สีขาว)
+
+     1.1BMSHOSxPXE4CloudApplicationInstaller.exe
+
+     1.2HOSxPXE PCU(สีฟ้า)
+
+     1.3BMSHOSxPStandard43Export(สีขาว)
+
 2. เปิดระบบ emergency mode และ ห้องตรวจ ผ่านเมนู SQL ด้วยโปรแกรม HOSxP PCU(สีเขียว)
+
  3. ปรับปรุงโครงสร้างฐานข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว)
+
 4. จับคู่รายการ LAB ในระบบ และ การ Update ผล LAB  ด้วยโปรแกรม HOSxP PCU(สีเขียว)
+
 5. ระบุ รหัสมาตรฐาน  7 หลักในระบบ ด้วยโปรแกรม HOSxPXE PCU(สีฟ้า)
+
 6. ประมวลผล และ ส่งออกข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว)
+
+------
+
+## 1.ติดตั้งโปรแกรมที่เกี่ยวข้องให้ครบถ้วน
+
+### 1.1 BMSHOSxPXE4CloudApplicationInstaller.exe
+
+สัญลักษณ์	: 
+
+รุ่น			: 4.61.12.9 ขึ้นไป
+
+ดาวโหลด		: [BMSHOSxPXE4CloudApplicationInstaller](https://my.pcloud.com/publink/show?code=XZMQU17ZvmXi5nm0818TncMWdE5ob43agAX7)
+
+เนื้อหา		: สำหรับ Download โปรแกรม และทำการติดตั้ง อีก 2 โปรแกรมเพิ่มเติมคือ HOSxPXE PCU และ BMSHOSxPStandard43Export ผ่าน ระบบ Internet จาก บริษัทของ BMS
+
+การติดตั้ง		: ทำการดับเบิลคลิก เพื่อเปิดโปรแกรม สามารถเปิด ผ่าน USB ได้ ไม่จำเป็น ต้องติดตั้ง ลงในเครื่องคอมพิวเตอร์
+
+```
+1.1.1 ทำการดับเบิลคลิกเพื่อเปิดโปรแกรมได้ทันที
+```
+
+![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+
+```
+1.1.2 หากมีข้อความเตือน ดังรูปภาพตัวอย่าง เกิดจากโปรแกรม ได้ตรวจสอบ ผ่านระบบ Internet  พบว่า มีรุ่นที่ใหม่กว่า สามารถกด ปุ่ม "Yes" ได้ เพื่อทำการปรับปรุงโปรแกรม ที่ทำการติดตั้งได้ หลังจากนั้น ก็จะเริ่มทำการติดตั้ง โปแกรม อื่นๆ เพิ่มเติม คือ HOSxPXE PCU(สีฟ้า) และBMSHOSxPStandard43Export(สีขาว) ตามลำดับ
+```
+
+![2018-12-10 002](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 002.png)
+
+------
+
+### 1.2 HOSxPXE PCU(สีฟ้า)
+
+สัญลักษณ์	: 
+
+รุ่น			: Build 73 ขึ้นไป
+
+ดาวโหลด		: ผ่านโปรแกรม BMSHOSxPXE4CloudApplicationInstaller เท่านั้น
+
+เนื้อหา		: สำหรับการจับคู่ รายการ LAB และ รหัส 7 หลักตามรายการมาตรฐาน 43 แฟ้ม 2.3 ปี 2561
+
+การติดตั้ง		: 
+
+```
+1.2.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
+```
+
+![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+
+```
+1.2.2 ทำการเลือก HOSxPXE_PCU.exe จากนั้น กดปุ่ม Install
+```
+
+![2018-12-10 004](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 004.png)
+
+```
+1.2.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
+```
+
+![2018-12-10 007](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 007.png)
+
+```
+1.2.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีฟ้า)
+```
+
+![2018-12-10 009](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 009.png)
+
+------
+
+### 1.3 BMSHOSxPStandard43Export(สีขาว)
+
+สัญลักษณ์	: 
+
+รุ่น			: Build 26 ขึ้นไป
+
+ดาวโหลด		: ผ่านโปรแกรม BMSHOSxPXE4CloudApplicationInstaller เท่านั้น
+
+เนื้อหา		: สำหรับการปรับปรุงโครงสร้างฐานข้อมูลของ hosxp และ การส่งออกข้อมูล 43 แฟ้ม
+
+การติดตั้ง		: 
+
+```
+1.3.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
+```
+
+![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+
+```
+1.3.2 ทำการเลือก BMSHOSxPStandard43Export จากนั้น กดปุ่ม Install
+```
+
+![2018-12-10 003](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 003.png)
+
+```
+1.3.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
+```
+
+![2018-12-10 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 006.png)
+
+```
+1.3.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีขาว)
+```
+
+![2018-12-10 008](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 008.png)
+
+------
+
+## 2. เปิดระบบ emergency mode และ ห้องตรวจ ผ่านเมนู SQL ด้วยโปรแกรม HOSxP PCU(สีเขียว)
+
+```
+2.1 เปิดโปรแกรม HOSxp PCU(สีเขียว)
+```
+
+![2018-12-12 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-12 006.png)
+
+```
+2.2 เข้าไปที่เมนู SQL QUERY
+```
+
+![2018-12-10 017](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 017.png)
+
+```
+2.3 นำ SQL คำสั่งไปวางดังนี้ และ กด ปุ่ม execute 
+UPDATE opdconfig SET opdconfig.emergency_mode = 'y'
+จะมี หน้าต่างแสดงขึ้นมา กดปุ่ม Yes
+```
+
+![2018-12-10 018](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 018.png)
+
+```
+2.4 ระบบจะแสดงข้อความอีกครั้ง "Execute done." กดปุ่ม "OK" เสร็จสิ้นกระบวนการ
+```
+
+![2018-12-10 019](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 019.png)
+
+```
+หมายเหตุ
+	การ เปิด emergency mode นั้นก็เพื่อให้สามารถใช้การ Upgrade Structure ผ่านโปรแกรม BMSHOSxPStandard43Export(สีขาว) ได้ 
+	ซึ่งหากหน่วยบริการ ผ่านการอบรม การส่งออกข้อมูลประกันสังคม ของจังหวัดนครปฐม แล้ว ก็จะสามารถ เข้าใช้งานได้ BMSHOSxPStandard43Export(สีขาว)  และ HOSxPXE PCU(สีฟ้า) ได้ตามปกติ ไม่จำเป็นต้องใช้ คำสั่ง SQL เพราะ มีการ เพิ่มระบบรายงาน  ที่แทรกคำสั่ง SQL ไว้ในระบบแล้ว
+```
+
+คำสั่ง SQL เพิ่มเติม
+
+เปิด emergency mode
+
+```mysql
+UPDATE opdconfig SET opdconfig.emergency_mode = 'y';
+```
+
+เพิ่ม ห้องตรวจใน ระบบ HOSxP PCU เดิม ให้สามารถใช้งานได้ สาขาห้องตรวจ  HOSXP XE
+
+```mysql
+UPDATE kskdepartment 
+SET kskdepartment.hospital_department_id = ( SELECT min(hospital_department.id) FROM hospital_department),
+kskdepartment.depcode_active = 'y',
+kskdepartment.department_active = 'y'
+```
+
+เปลียนชื่อ สาขาห้องตรวจเป็นชื่อ หน่วยบริการ 
+
+```mysql
+UPDATE hospital_department
+SET hospital_department.NAME = ( SELECT opdconfig.hospitalname FROM opdconfig)
+WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id) FROM kskdepartment)
+```
+
+------
+
+## 3. ปรับปรุงโครงสร้างฐานข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว)
+
