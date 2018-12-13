@@ -1,6 +1,9 @@
-การตั้งค่าเพื่อการส่งออกข้อมูล LABFU ในระบบฐานข้อมูล Hosxp ปีงบประมาณ 2562
-เครือข่ายโรงพยาบาลนครปฐม
-Update Version 2018-12-11
+# การตั้งค่าเพื่อการส่งออกข้อมูล LABFU 
+
+# ในระบบฐานข้อมูล Hosxp ปีงบประมาณ 2562
+
+`Editor By Inforeportable`
+`Update Version 2018-12-11`
 
 ------
 
@@ -128,13 +131,13 @@ Update Version 2018-12-11
 1.1.1 ทำการดับเบิลคลิกเพื่อเปิดโปรแกรมได้ทันที
 ```
 
-![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+![2018-12-10 001](pic/2018-12-10 001.png)
 
 ```
 1.1.2 หากมีข้อความเตือน ดังรูปภาพตัวอย่าง เกิดจากโปรแกรม ได้ตรวจสอบ ผ่านระบบ Internet  พบว่า มีรุ่นที่ใหม่กว่า สามารถกด ปุ่ม "Yes" ได้ เพื่อทำการปรับปรุงโปรแกรม ที่ทำการติดตั้งได้ หลังจากนั้น ก็จะเริ่มทำการติดตั้ง โปแกรม อื่นๆ เพิ่มเติม คือ HOSxPXE PCU(สีฟ้า) และBMSHOSxPStandard43Export(สีขาว) ตามลำดับ
 ```
 
-![2018-12-10 002](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 002.png)
+![2018-12-10 002](pic/2018-12-10 002.png)
 
 ------
 
@@ -154,25 +157,25 @@ Update Version 2018-12-11
 1.2.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
 ```
 
-![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+![2018-12-10 001](pic/2018-12-10 001.png)
 
 ```
 1.2.2 ทำการเลือก HOSxPXE_PCU.exe จากนั้น กดปุ่ม Install
 ```
 
-![2018-12-10 004](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 004.png)
+![2018-12-10 004](pic/2018-12-10 004.png)
 
 ```
 1.2.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
 ```
 
-![2018-12-10 007](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 007.png)
+![2018-12-10 007](pic/2018-12-10 007.png)
 
 ```
 1.2.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีฟ้า)
 ```
 
-![2018-12-10 009](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 009.png)
+![2018-12-10 009](pic/2018-12-10 009.png)
 
 ------
 
@@ -192,25 +195,25 @@ Update Version 2018-12-11
 1.3.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
 ```
 
-![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+![2018-12-10 001](pic/2018-12-10 001.png)
 
 ```
 1.3.2 ทำการเลือก BMSHOSxPStandard43Export จากนั้น กดปุ่ม Install
 ```
 
-![2018-12-10 003](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 003.png)
+![2018-12-10 003](pic/2018-12-10 003.png)
 
 ```
 1.3.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
 ```
 
-![2018-12-10 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 006.png)
+![2018-12-10 006](pic/2018-12-10 006.png)
 
 ```
 1.3.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีขาว)
 ```
 
-![2018-12-10 008](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 008.png)
+![2018-12-10 008](pic/2018-12-10 008.png)
 
 ------
 
@@ -220,13 +223,13 @@ Update Version 2018-12-11
 2.1 เปิดโปรแกรม HOSxp PCU(สีเขียว) ที่ใช้งานประจำ
 ```
 
-![2018-12-12 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-12 006.png)
+![2018-12-12 006](pic/2018-12-12 006.png)
 
 ```
 2.2 เข้าไปที่เมนู Tools -- SQL QUERY
 ```
 
-![2018-12-10 017](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 017.png)
+![2018-12-10 017](pic/2018-12-10 017.png)
 
 ```
 2.3 นำ SQL คำสั่งไปวางดังนี้ และ กด ปุ่ม Exec
@@ -234,13 +237,13 @@ UPDATE opdconfig SET opdconfig.emergency_mode = 'y'
 จะมี หน้าต่างแสดงขึ้นมา กดปุ่ม Yes
 ```
 
-![2018-12-10 018](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 018.png)
+![2018-12-10 018](pic/2018-12-10 018.png)
 
 ```
 2.4 ระบบจะแสดงข้อความอีกครั้ง "Execute done." กดปุ่ม "OK" เสร็จสิ้นกระบวนการ
 ```
 
-![2018-12-10 019](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 019.png)
+![2018-12-10 019](pic/2018-12-10 019.png)
 
 ```
 หมายเหตุ
