@@ -1,9 +1,8 @@
-# การตั้งค่าเพื่อการส่งออกข้อมูล LABFU 
+# การตั้งค่าเพื่อการส่งออกข้อมูล LABFU ในระบบฐานข้อมูล Hosxp ปีงบประมาณ 2562
 
-# ในระบบฐานข้อมูล Hosxp ปีงบประมาณ 2562
-
-`Editor By Inforeportable`
-`Update Version 2018-12-11`
+Editor	: 	inforeportable
+Update	:	2018-12-11
+Email	: 	inforeportable@gmail.com
 
 ------
 
@@ -11,8 +10,8 @@
 
 - [ ] ผู้ใช้งานระดับเริ่มต้น
 
-- [x] ผู้ใช้งานระดับกลาง
-- [x] ผู้ใช้งานระดับสูง
+- [x] ผู้ใช้งานระดับกลาง (มีการจับคู่รายการแลป , ใช้โปรแกมที่เกี่ยวข้อง มากกว่า 1 โปรแกรม)
+- [x] ผู้ใช้งานระดับสูง (มีการใช้คำสั่ง SQL , ตรวจสอบ ความถูกต้องของข้อมูล)
 
 ------
 
@@ -44,42 +43,79 @@
 
 หากทำการ ใส่รหัส 7 หลัก น้อยกว่า 21 รายการขึ้นไป
 - จะมีหน้าต่างเตือน ตอนที่จะประมวลผล ส่งออก  43 แฟ้ม
-- ผลแลป และ รหัส จะไปดึงผลมาจากตาราง opdscreen ทีมีการ + จับคู่รายการแลป และ มีการ + Update ผล Lab เรียบร้อย แล้วเท่านั้น
+- ผลแลป และ รหัส จะไปดึงผลมาจากตาราง `opdscreen` ทีมีการ + จับคู่รายการแลป และ มีการ + Update ผล Lab เรียบร้อย แล้วเท่านั้น
 
 ​	เมื่อพิจารณาจากข้อสรุปแล้ว หากต้องการแก้ไขที่ง่ายที่สุด  ก็แค่เพียงระบุ รหัส 7 หลัก ให้มากกว่า  21 รายการขึ้นไป ผลแลป และ รหัสแลป ก็จะถูกส่งออกได้อย่างถูกต้อง โดยที่ไม่จำเป็นต้อง ทำการจับคู่รายการแลปที่เหลือ  และทำการ Update Lab อื่นๆ
 
-​	แต่ วิธีการข้างต้นนั้น อาจจะทำให้ ผลแลปบางตัว ไม่ถูกส่งออกเช่น ผล DTX ก่อนอาหาร หรือ หลังอาหาร ที่หน้าฟอร์ม One Stop Service จะแปลผล ดังนี้
+​	แต่ วิธีการข้างต้นนั้น อาจจะทำให้ ผลแลปบางตัว ไม่ถูกส่งออกเช่น ผล DTX ก่อนอาหาร หรือ หลังอาหาร ที่หน้าฟอร์ม One Stop Service จะแปลผล ดังนี้ เมื่อผู้ป่วย ได้ขึ้นทะเบียนคลินิกพิเศษ เบาหวาน/ความดัน + ได้เข้ามารับบริการ + กดปุ่ม ว่ามารับบริการในคลินิก
 
 | รหัส 2 หลัก | รหัส 7 หลัก | รายละเอียด                                       |
 | --------- | --------- | ----------------------------------------------- |
-| 03        | 0531101   | 03=ตรวจน้ำตาลในเลือด   จากเส้นเลือดฝอย หลังอดอาหาร   |
-| 04        | 0531102   | 04=ตรวจน้ำตาลในเลือด   จากเส้นเลือดฝอย โดยไม่อดอาหาร |
+| 03        | `0531101` | 03=ตรวจน้ำตาลในเลือด   จากเส้นเลือดฝอย หลังอดอาหาร   |
+| 04        | `0531102` | 04=ตรวจน้ำตาลในเลือด   จากเส้นเลือดฝอย โดยไม่อดอาหาร |
 
-หรือ ผลแลปที่เกี่ยวข้องกับ ฟอร์มคลินิกพิเศษโรคเรื้อรัง เพื่อดูกราฟ การเปลี่ยนแปลง อาจะไม่สามารถดูการเปลี่ยนแปลงได้เช่น
+```
+ตัวอย่างหน้าต่าง One Stop Service ที่ลง DTX
+```
+
+![2018-12-14 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-14 001.png)
+
+หรือ ผลแลปที่เกี่ยวข้องกับ ฟอร์มคลินิกพิเศษโรคเรื้อรัง เพื่อดูกราฟ การเปลี่ยนแปลง อาจะไม่สามารถดูการเปลี่ยนแปลงได้หากไม่มีการจับคู่รายการ Lab เช่น
 
 | รหัส 2 หลัก | รหัส 7 หลัก | รายละเอียด                                                    |
 | --------- | --------- | ------------------------------------------------------------ |
-| 01        | 0531002   | 01=ตรวจน้ำตาลในเลือด   จากหลอดเลือดดำ หลังอดอาหาร                |
-| 02        | 0531004   | 02=ตรวจน้ำตาลในเลือด   จากหลอดเลือดดำ โดยไม่อดอาหาร              |
-| 05        | 0531601   | 05=ตรวจ   HbA1C                                              |
-| 06        | 0546602   | 06=ตรวจ   Triglyceride                                       |
-| 07        | 0541602   | 07=ตรวจ   Total Cholesterol                                  |
-| 08        | 0541202   | 08=ตรวจ   HDL Cholesterol                                    |
-| 09        | 0541402   | 09=ตรวจ   LDL Cholesterol                                    |
-| 10        | 0583001   | 10=ตรวจ   BUN ในเลือด                                         |
-| 11        | 0581902   | 11=ตรวจ   Creatinine ในเลือด                                  |
-| 12        | 0440204   | 12=ตรวจโปรตีน   microalbumin ในปัสสาวะ (ใน filed ผลการตรวจใส่ค่า 0=negative, 1=trace,   2=positive) |
+| 01        | `0531002` | 01=ตรวจน้ำตาลในเลือด   จากหลอดเลือดดำ หลังอดอาหาร                |
+| 02        | `0531004` | 02=ตรวจน้ำตาลในเลือด   จากหลอดเลือดดำ โดยไม่อดอาหาร              |
+| 05        | `0531601` | 05=ตรวจ   HbA1C                                              |
+| 06        | `0546602` | 06=ตรวจ   Triglyceride                                       |
+| 07        | `0541602` | 07=ตรวจ   Total Cholesterol                                  |
+| 08        | `0541202` | 08=ตรวจ   HDL Cholesterol                                    |
+| 09        | `0541402` | 09=ตรวจ   LDL Cholesterol                                    |
+| 10        | `0583001` | 10=ตรวจ   BUN ในเลือด                                         |
+| 11        | `0581902` | 11=ตรวจ   Creatinine ในเลือด                                  |
+| 12        | `0440204` | 12=ตรวจโปรตีน   microalbumin ในปัสสาวะ (ใน filed ผลการตรวจใส่ค่า 0=negative, 1=trace,   2=positive) |
 
-เพราะระบบจะดึงผลมาใส่จากชื่อที่มีการจับคู่เท่านั้น ไม่ได้ดึงมาจาก รหัสมาตรฐาน 7 หลัก ที่ระบุเข้าไป หรือ แม้กระทั้ง การคำนวนค่า egfr นั้นที่ระบบทำการคำนวนอัตโนมัติ และ ส่งออกมาให้ ก็ได้มาจากปัจจัย ค่า Creatinine + เพศ + อายุ
+```
+ตัวอย่างหน้าต่าง ดูการเปลี่ยนแปลงผลแลป ทะเบียนคลินิกพิเศษ เบาหวาน/ความดัน  -- รายการผู้ป่วย -- Graph
+```
 
-| เพศ  | ระดับ Creatinine ในเลือด (mg/dL) | สมการ                                     |
-| ---- | ------------------------------ | ----------------------------------------- |
-| หญิง  | น้อยกว่า หรือ เท่ากับ 0.7           | eGFR = 144 x (SCr/0.7)-0.329 X (0.993)Age |
-| หญิง  | มากกว่า 0.7                     | eGFR = 144 x (SCr/0.7)-1.209 X (0.993)Age |
-| ชาย  | น้อยกว่า หรือ เท่ากับ 0.9           | eGFR = 141 x (SCr/0.9)-0.411 X (0.993)Age |
-| ชาย  | มากกว่า 0.9                     | eGFR = 141 x (SCr/0.9)-1.209 X (0.993)Age |
+![2018-12-10 031](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 031.png)
 
-ซึ่งค่า eGFR ระบบ จะไม่แสดงผล แต่ มีการส่งออกเมื่อการประมวล 43 แฟ้ม โดยใช้สูตรการคำนวน ของสมาคมโรคไต ปี 2558	
+เพราะระบบจะดึงผลมาใส่จากชื่อที่มีการจับคู่เท่านั้น ไม่ได้ดึงมาจาก รหัสมาตรฐาน 7 หลัก ที่ระบุเข้าไป หรือ แม้กระทั้ง การคำนวนค่า egfr นั้นที่ระบบทำการคำนวนอัตโนมัติ และ ส่งออกมาให้ ก็ได้มาจากปัจจัย `ค่า Creatinine + เพศ + อายุ`
+
+ เพศ	`หญิง`	ระดับ Creatinine ในเลือด (mg/dL)	`≤ 0.7`
+$$ {`}
+eGFR = 144\times((\frac{SCr}{0.7})^{-0.329})\times((0.993)^{Age})
+$$ {`}
+เพศ	`หญิง`	ระดับ Creatinine ในเลือด (mg/dL)	`> 0.7`
+$$
+eGFR = 144\times((\frac{SCr}{0.7})^{-1.209})\times((0.993)^{Age})
+$$
+ เพศ	`ชาย`	ระดับ Creatinine ในเลือด (mg/dL)	`≤ 0.9`
+$$
+eGFR = 141\times((\frac{SCr}{0.9})^{-0.411})\times((0.993)^{Age})
+$$
+ เพศ	`ชาย`	ระดับ Creatinine ในเลือด (mg/dL)	`> 0.9`
+$$
+eGFR = 141\times((\frac{SCr}{0.9})^{-1.209})\times((0.993)^{Age})
+$$
+
+
+กำหนด ให้ `Age` คือ อายุ หน่วย เป็น ปี
+
+กำหนด ให้ `SCr` คือ ค่า Creatinine
+
+ซึ่งค่า eGFR ระบบ จะไม่แสดงผล แต่ มีการส่งออกเมื่อการประมวล 43 แฟ้ม เป็นรหัส 7 หลัก ดังนี้
+
+| รหัส 2 หลัก | รหัส 7 หลัก | รายละเอียด                                   |
+| --------- | --------- | ------------------------------------------- |
+| 15        | `0581904` | 03=การตรวจหาค่า eGFR (ใช้สูตร CKD-EPI formula) |
+
+โดยที่กล่าวมาข้างต้นทั้งหมด อาจจะพบเจอปัญหาได้ หาก ไม่มีการ จับคู่ รายการ LAB 
+
+------
+
+
 
 # สรุปวิธีการแก้ปัญหา
 
@@ -115,9 +151,9 @@
 
 ## 1.ติดตั้งโปรแกรมที่เกี่ยวข้องให้ครบถ้วน
 
-### 1.1 BMSHOSxPXE4CloudApplicationInstaller.exe
+### 1.1 BMSHOSxPXE4CloudApplicationInstaller.exe <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/BMSHOSxPXE4CloudApplicationInstaller.png" width="36px" />
 
-สัญลักษณ์	: 
+สัญลักษณ์	: <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/BMSHOSxPXE4CloudApplicationInstaller.png" width="36px" />
 
 รุ่น			: 4.61.12.9 ขึ้นไป
 
@@ -131,19 +167,19 @@
 1.1.1 ทำการดับเบิลคลิกเพื่อเปิดโปรแกรมได้ทันที
 ```
 
-![2018-12-10 001](pic/2018-12-10 001.png)
+![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
 
 ```
 1.1.2 หากมีข้อความเตือน ดังรูปภาพตัวอย่าง เกิดจากโปรแกรม ได้ตรวจสอบ ผ่านระบบ Internet  พบว่า มีรุ่นที่ใหม่กว่า สามารถกด ปุ่ม "Yes" ได้ เพื่อทำการปรับปรุงโปรแกรม ที่ทำการติดตั้งได้ หลังจากนั้น ก็จะเริ่มทำการติดตั้ง โปแกรม อื่นๆ เพิ่มเติม คือ HOSxPXE PCU(สีฟ้า) และBMSHOSxPStandard43Export(สีขาว) ตามลำดับ
 ```
 
-![2018-12-10 002](pic/2018-12-10 002.png)
+![2018-12-10 002](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 002.png)
 
 ------
 
-### 1.2 HOSxPXE PCU(สีฟ้า)
+### 1.2 HOSxPXE PCU(สีฟ้า) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxPXE%20PCU.png" width="36px" />
 
-สัญลักษณ์	: 
+สัญลักษณ์	: <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxPXE%20PCU.png" width="36px" />
 
 รุ่น			: Build 73 ขึ้นไป
 
@@ -157,31 +193,31 @@
 1.2.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
 ```
 
-![2018-12-10 001](pic/2018-12-10 001.png)
+![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
 
 ```
 1.2.2 ทำการเลือก HOSxPXE_PCU.exe จากนั้น กดปุ่ม Install
 ```
 
-![2018-12-10 004](pic/2018-12-10 004.png)
+![2018-12-10 004](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 004.png)
 
 ```
 1.2.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
 ```
 
-![2018-12-10 007](pic/2018-12-10 007.png)
+![2018-12-10 007](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 007.png)
 
 ```
 1.2.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีฟ้า)
 ```
 
-![2018-12-10 009](pic/2018-12-10 009.png)
+![2018-12-10 009](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 009.png)
 
 ------
 
-### 1.3 BMSHOSxPStandard43Export(สีขาว)
+### 1.3 BMSHOSxPStandard43Export(สีขาว) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/BMSHOSxPStandard43Export.png" width="36px" />
 
-สัญลักษณ์	: 
+สัญลักษณ์	: <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/BMSHOSxPStandard43Export.png" width="36px" />
 
 รุ่น			: Build 26 ขึ้นไป
 
@@ -195,41 +231,41 @@
 1.3.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
 ```
 
-![2018-12-10 001](pic/2018-12-10 001.png)
+![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
 
 ```
 1.3.2 ทำการเลือก BMSHOSxPStandard43Export จากนั้น กดปุ่ม Install
 ```
 
-![2018-12-10 003](pic/2018-12-10 003.png)
+![2018-12-10 003](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 003.png)
 
 ```
 1.3.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
 ```
 
-![2018-12-10 006](pic/2018-12-10 006.png)
+![2018-12-10 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 006.png)
 
 ```
 1.3.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีขาว)
 ```
 
-![2018-12-10 008](pic/2018-12-10 008.png)
+![2018-12-10 008](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 008.png)
 
 ------
 
-## 2. เปิดระบบ emergency mode และ ห้องตรวจ ผ่านเมนู SQL ด้วยโปรแกรม HOSxP PCU(สีเขียว)
+## 2. เปิดระบบ emergency mode และ ห้องตรวจ ผ่านเมนู SQL ด้วยโปรแกรม HOSxP PCU(สีเขียว) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxP%20PCU.png" width="64px" />
 
 ```
 2.1 เปิดโปรแกรม HOSxp PCU(สีเขียว) ที่ใช้งานประจำ
 ```
 
-![2018-12-12 006](pic/2018-12-12 006.png)
+![2018-12-12 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-12 006.png)
 
 ```
 2.2 เข้าไปที่เมนู Tools -- SQL QUERY
 ```
 
-![2018-12-10 017](pic/2018-12-10 017.png)
+![2018-12-10 017](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 017.png)
 
 ```
 2.3 นำ SQL คำสั่งไปวางดังนี้ และ กด ปุ่ม Exec
@@ -237,18 +273,18 @@ UPDATE opdconfig SET opdconfig.emergency_mode = 'y'
 จะมี หน้าต่างแสดงขึ้นมา กดปุ่ม Yes
 ```
 
-![2018-12-10 018](pic/2018-12-10 018.png)
+![2018-12-10 018](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 018.png)
 
 ```
 2.4 ระบบจะแสดงข้อความอีกครั้ง "Execute done." กดปุ่ม "OK" เสร็จสิ้นกระบวนการ
 ```
 
-![2018-12-10 019](pic/2018-12-10 019.png)
+![2018-12-10 019](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 019.png)
 
 ```
 หมายเหตุ
 	การ เปิด emergency mode นั้นก็เพื่อให้สามารถใช้การ Upgrade Structure ผ่านโปรแกรม BMSHOSxPStandard43Export(สีขาว) ได้ 
-	ซึ่งหากหน่วยบริการ ผ่านการอบรม การส่งออกข้อมูลประกันสังคม ของจังหวัดนครปฐม แล้ว ก็จะสามารถ เข้าใช้งานได้ BMSHOSxPStandard43Export(สีขาว)  และ HOSxPXE PCU(สีฟ้า) ได้ตามปกติ ไม่จำเป็นต้องใช้ คำสั่ง SQL เพราะ มีการ เพิ่มระบบรายงาน  ที่แทรกคำสั่ง SQL ไว้ในระบบแล้ว
+	ซึ่งหากหน่วยบริการ ผ่านการอบรม การส่งออกข้อมูลประกันสังคม ของจังหวัดนครปฐม แล้ว ก็จะสามารถ เข้าใช้งานได้ BMSHOSxPStandard43Export(สีขาว) และ HOSxPXE PCU(สีฟ้า) ได้ตามปกติ ไม่จำเป็นต้องใช้ คำสั่ง SQL เพราะ มีการ เพิ่มระบบรายงาน  ที่แทรกคำสั่ง SQL ไว้ในระบบแล้ว
 ```
 
 คำสั่ง SQL เพิ่มเติม
@@ -278,5 +314,9 @@ WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id
 
 ------
 
-## 3. ปรับปรุงโครงสร้างฐานข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว)
+## 3. ปรับปรุงโครงสร้างฐานข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/BMSHOSxPStandard43Export.png" width="64px" />
+
+
+
+> เนื้อหากำลังปรับปรุง
 
