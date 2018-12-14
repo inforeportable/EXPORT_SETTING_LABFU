@@ -1,4 +1,4 @@
-# การตั้งค่าเพื่อการส่งออกข้อมูล LABFU ในระบบฐานข้อมูล Hosxp ปีงบประมาณ 2562
+# การตั้งค่าเพื่อการส่งออกข้อมูล LABFU ในระบบฐานข้อมูล Hosxp ระดับ รพ.สต. ปีงบประมาณ 2562
 
 Editor	: 	inforeportable
 Update	:	2018-12-14 15:55
@@ -60,7 +60,7 @@ Email	: 	inforeportable@gmail.com
 ตัวอย่าง ฟอร์ม One Stop Service ที่มีการบันทึก  dtx 
 ```
 
-![2018-12-14 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-14 006.png)
+![2018-12-14 006](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-14 006.png)
 
 หรือ ผลแลปที่เกี่ยวข้องกับ ฟอร์มคลินิกพิเศษโรคเรื้อรัง เพื่อดูกราฟ การเปลี่ยนแปลง อาจะไม่สามารถดูการเปลี่ยนแปลงได้หากไม่มีการจับคู่รายการ Lab เช่น
 
@@ -81,7 +81,7 @@ Email	: 	inforeportable@gmail.com
 ตัวอย่างหน้าต่าง ดูการเปลี่ยนแปลงผลแลป ทะเบียนคลินิกพิเศษ เบาหวาน/ความดัน  -- รายการผู้ป่วย -- Graph
 ```
 
-![2018-12-10 031](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 031.png)
+![2018-12-10 031](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 031.png)
 
 เพราะระบบจะดึงผลมาใส่จากชื่อที่มีการจับคู่เท่านั้น ไม่ได้ดึงมาจาก รหัสมาตรฐาน 7 หลัก ที่ระบุเข้าไป หรือ แม้กระทั้ง การคำนวนค่า egfr นั้นที่ระบบทำการคำนวนอัตโนมัติ และ ส่งออกมาให้ ก็ได้มาจากปัจจัย `ค่า Creatinine + เพศ + อายุ`
 
@@ -169,13 +169,13 @@ $$
 1.1.1 ทำการดับเบิลคลิกเพื่อเปิดโปรแกรมได้ทันที
 ```
 
-![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+![2018-12-10 001](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 001.png)
 
 ```
-1.1.2 หากมีข้อความเตือน ดังรูปภาพตัวอย่าง เกิดจากโปรแกรม ได้ตรวจสอบ ผ่านระบบ Internet  พบว่า มีรุ่นที่ใหม่กว่า สามารถกด ปุ่ม "Yes" ได้ เพื่อทำการปรับปรุงโปรแกรม ที่ทำการติดตั้งได้ หลังจากนั้น ก็จะเริ่มทำการติดตั้ง โปแกรม อื่นๆ เพิ่มเติม คือ HOSxPXE PCU(สีฟ้า) และBMSHOSxPStandard43Export(สีขาว) ตามลำดับ
+1.1.2 หากมีข้อความเตือน ดังรูปภาพตัวอย่าง เกิดจากโปรแกรม ได้ตรวจสอบ ผ่านระบบ Internet  พบว่า มีรุ่นที่ใหม่กว่า สามารถกด ปุ่ม "Yes" ได้ เพื่อทำการปรับปรุงโปรแกรม ที่ทำการติดตั้งได้ หลังจากนั้น ก็จะเริ่มทำการติดตั้ง โปแกรม อื่นๆ เพิ่มเติม คือ HOSxPXE PCU(สีฟ้า) และ BMSHOSxPStandard43Export(สีขาว) ตามลำดับ
 ```
 
-![2018-12-10 002](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 002.png)
+![2018-12-10 002](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 002.png)
 
 ------
 
@@ -195,25 +195,25 @@ $$
 1.2.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
 ```
 
-![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+![2018-12-10 001](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 001.png)
 
 ```
 1.2.2 ทำการเลือก HOSxPXE_PCU.exe จากนั้น กดปุ่ม Install
 ```
 
-![2018-12-10 004](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 004.png)
+![2018-12-10 004](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 004.png)
 
 ```
 1.2.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
 ```
 
-![2018-12-10 007](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 007.png)
+![2018-12-10 007](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 007.png)
 
 ```
 1.2.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีฟ้า)
 ```
 
-![2018-12-10 009](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 009.png)
+![2018-12-10 009](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 009.png)
 
 ------
 
@@ -233,25 +233,25 @@ $$
 1.3.1 ทำการดับเบิลคลิก ที่โปรแกรม BMSHOSxPXE4CloudApplicationInstaller.exe
 ```
 
-![2018-12-10 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 001.png)
+![2018-12-10 001](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 001.png)
 
 ```
 1.3.2 ทำการเลือก BMSHOSxPStandard43Export จากนั้น กดปุ่ม Install
 ```
 
-![2018-12-10 003](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 003.png)
+![2018-12-10 003](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 003.png)
 
 ```
 1.3.3 เมื่อทำการติดตั้งเสร็จ จะมีข้อความขึ้นดังรูปภาพด้านล่าง
 ```
 
-![2018-12-10 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 006.png)
+![2018-12-10 006](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 006.png)
 
 ```
 1.3.4 จะมี Icon เพิ่มอยู่ที่หน้าจอ (สีขาว)
 ```
 
-![2018-12-10 008](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 008.png)
+![2018-12-10 008](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 008.png)
 
 ------
 
@@ -261,13 +261,13 @@ $$
 2.1 เปิดโปรแกรม HOSxp PCU(สีเขียว) ที่ใช้งานประจำ
 ```
 
-![2018-12-12 006](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-12 006.png)
+![2018-12-12 006](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-12 006.png)
 
 ```
 2.2 เข้าไปที่เมนู Tools -- SQL QUERY
 ```
 
-![2018-12-10 017](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 017.png)
+![2018-12-10 017](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 017.png)
 
 ```
 2.3 นำ SQL คำสั่งไปวางดังนี้ และ กด ปุ่ม Exec
@@ -275,13 +275,13 @@ UPDATE opdconfig SET opdconfig.emergency_mode = 'Y'
 จะมี หน้าต่างแสดงขึ้นมา กดปุ่ม Yes
 ```
 
-![2018-12-10 018](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 018.png)
+![2018-12-10 018](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 018.png)
 
 ```
 2.4 ระบบจะแสดงข้อความอีกครั้ง "Execute done." กดปุ่ม "OK" เสร็จสิ้นกระบวนการ
 ```
 
-![2018-12-10 019](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 019.png)
+![2018-12-10 019](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 019.png)
 
 ```
 หมายเหตุ
@@ -329,7 +329,7 @@ WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id
 3.1 ดับเบิลคลิกเปิดโปรแกรม BMSHOSxPStandard43Export(สีขาว)
 ```
 
-![2018-12-10 008](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-10 008.png)
+![2018-12-10 008](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 008.png)
 
 ```
 3.2 เลือกที่ 
@@ -338,39 +338,117 @@ WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id
 - รอซักครู่จะมี หน้าต่าแสดง ผล กดปุ่ม "OK" หลัจากนั้นรอซักครู่จะมีเมนูเพิ่มเติมแสดงขึ้นมา อาจะใช้เวลานานขึ้นอยู่กับ คุณสมบัติของเครื่องที่ใช้งาน และ ระบบฐานข้อมูล
 ```
 
-![2018-12-14 002](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-14 002.png)
+![2018-12-14 002](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-14 002.png)
 
 ```
 3.3 ระบบจะแสดงเมนูเพิ่มเติมขึ้นมากดที่ Upgrade Structure
 ```
 
-![2018-12-14 005](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-14 005.png)
+![2018-12-14 005](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-14 005.png)
 
 ```
 3.4 ระบบจะทำการตรวจสอบ ตารางต่างๆ และ ปรับปรุง โครงสร้าง เพิ่มช่องข้อมูล เพิ่มดัชนี
 ```
 
-![2018-12-14 003](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-14 003.png)
+![2018-12-14 003](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-14 003.png)
 
 ```
 3.5 เมื่อเสร็จสิ้น ระบบจะขึ้นหน้าต่างดังรูปภาพตัวอย่าง "Upgrade Structure done." กดปุ่ม "OK" หลังจากนั้น ก็สามารถปิดโปรแกรมได้ เป็นการเสร็จสั้นขั้นตอนการปรับปรุงโครงสร้างฐานข้อมูล
 ```
 
-![2018-12-14 004](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-14 004.png)
+![2018-12-14 004](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-14 004.png)
 
 > หมายเหตุ
 >
 > หากไม่สามารถกดปุ่ม "Upgrade Structure" ได้ และขึ้นข้อความ "Emergency Mode Only" ดังรูปภาพตัวอย่าง ต้องย้อนกลับไปปฏิบัติขั้นตอนที่  "2. เปิดระบบ emergency mode และ ห้องตรวจ ผ่านเมนู SQL ด้วยโปรแกรม HOSxP PCU(สีเขียว)" ก่อนให้เรียบร้อย
 
-![2018-12-14 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-14 001.png)
+![2018-12-14 001](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-14 001.png)
 
 ------
 
 ## 4. จับคู่รายการ LAB ในระบบ และ การ Update ผล LAB  ด้วยโปรแกรม HOSxP PCU(สีเขียว) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxP%20PCU.png" width="64px" />
 
-โปรดรอซักครู่ กำลังปรับปรุงอยู่ เร็วๆนี้ๆ
+```
+4.1 เปิดโปรแกรม HOSxp PCU(สีเขียว) ที่ใช้งานประจำ
+```
 
+![2018-12-12 006](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-12 006.png)
+
+```
+4.2 เข้าไปที่เมนู Tools -- System Setting
+```
+
+![2018-12-10 020](pic/2018-12-10 020.png)
+
+```
+4.3 เข้าไปที่เมนู Lab Link 
+```
+
+![2018-12-10 022](pic/2018-12-10 022.png)
+
+```
+4.4  ทำการจับคู่รายการ Lab ให้ถูกต้อง
+- กดที่ ... เพื่อให้หน้าต่าง Lab แสดง
+- พิมพ์ รายการ ที่ต้องการ
+- เลือก รายการที่ต้องการ
+- กด ตกลง
+ทำในรายการ ที่มีการให้บริการ จริง หรือ จำเป็นต้องใช้งาน รายงานผล และ ไม่จำเป็น ต้องมีการระบุครบทุกรายการ ก็ได้
+```
+
+![2018-12-14 007](pic/2018-12-14 007.png)
+
+4.5  กด Update ผลแลป  2 แห่งดังนี้ 
+
+4.5.1 หน้าต่าง System Setting  -- Lab Link
+
+
+
+
+
+
+
+**ข้อควรรู้ และ ต้องระวัง**
+
+​	ไม่แนะนำให้พิมพ์รายการลงไปเอง เพราะการจับคู่รายการ Lab นี้ ตัวอักษร พิมพ์เล็ก ใหญ่ ช่องว่าง อักขระ ทุกตัวมีผล หาก ไม่มีอยู่ในรายการ  จะทำให้ ระบบ หาค่าอ้างอิงไม่เจอ ไม่สามารถ นำผลแลป จาก `lab_order.lab_order_result` มาใส่ในตาราง `opdscreen`  หรือ ตารางอื่นๆ ที่เกี่ยวข้อง
+
+​	รายการ ใดไม่ทราบ หรือ ไม่มี ก็ไม่ควรที่จะระบุค่าลงไป ในตัวอย่างเอกสารนี้ นำมาจาก ระบบฐานข้อมูล hosxp เริ่มต้น ที่ยังไม่มีเพิ่มเติมรายการแลปอื่นๆลงไป จะสามารถระบุค่าเริ่มต้นได้ทันทีดังนี้ ดังรูปภาพด้านบน หากรายการใดไม่มีให้เลือก ต้องทำการเพิ่ม รายการ LAB ใน ตาราง `lab_items` ก่อน แล้วจึงกลับมาทำการจับคู่รายการ LAB อีกครั้ง
+
+​	แต่ยังพบว่า ยังมีรายการ LAB  อยู่อีก 4 รายการ ที่จำเป็นต่อการส่งออก เพื่อออกรายงาน แต่ไม่ทราบแน่ชัด ว่ารายการที่ถูกต้องคืออะไร 
+
+1. Urine Albumin
+2. Urine Createinine
+3. Macro Albumin 
+4. Micro Albumin
+
+| รายการ Lab ในระบบ Hosxp | รหัส 7 หลัก | รายละเอียด                                                    |
+| ----------------------- | --------- | ------------------------------------------------------------ |
+| Urine Albumin           |           | ไม่ทราบ                                                       |
+| Urine Createinine       |           | ไม่ทราบ                                                       |
+| `Macro Albumin`         | `0440203` | การตรวจอัลบูมินในปัสสาวะ / ตรวจโปรตีน macroalbumin ในปัสสาวะ (ใน filed ผลการตรวจใส่ค่า 0=negative, 1=trace, 2=positive) |
+| `Micro Albumin`         | `0440204` | การตรวจโปรตีน microalbumin ในปัสสาวะ (ใน filed ผลการตรวจใส่ค่า 0=negative, 1=trace, 2=positive) |
+
+​	จำเป็นต้องขอความรู้ปรึกษา จากผู้เชี่ยวชาญทางห้องปฏิบัติการ เพราะแต่ละเครือข่าย แต่ละพื้นที่ อาจจะใช้ชื่อ ที่แตกต่างกันไป หรือ บางแห่ง ใช้การจุ่มจากแถบสี จากปัสสาวะ เพื่อหาระดับ หากทำการจับคู่รายการผิดจะมีผลทันที่โดยเฉพาะ เรื่อง รายงาน ตรวจภาวะแทรกซ้อนทางไต ของผู้ป่วยเบาหวาน  เพราะชื่อที่ใกล้เคียง อาจจะทำให้ การลงผล เกิดความสับสน ได้
+
+​	ซึ่ง 2 รายการ ที่จำเป็นต้องทำการส่งออก ก็คือ รายการ ที่ `Macro Albumin , Micro Albumin` เพื่อนำไปคิด รายงาน ในระบบ `HDC` และเพื่อ ลดข้อผิดพลาด สับสน  ในตัวอย่างจะมีการเพิ่มรายการ 2 รายการนี้ เพิ่มเติมเข้าไปในระบบ ด้วยคำสั่ง SQL  และ ผ่านโปรแกรม HOSxPXE PCU(สีฟ้า) : <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxPXE%20PCU.png" width="24px" />
+
+​	`Macro Albumin , Micro Albumin` มีความพิเศษ กว่ารายการ LAB ตัวอื่นๆ จากการติดตาม คำสั่ง ส่งออก ของ BMS จะมีการแทรกคำสั่ง แปลงค่าอัตโนมัติ เวลาส่งออกข้อมูลดังนี้
+
+ค่าระหว่าง	`1`		ถึง	`29`		ระบบแปลงเป็น `0 =  Negative`
+
+ค่าระหว่าง	`30`	ถึง	`300`		ระบบแปลงเป็น `1 =  Trace`
+
+ค่า			`301`	ขึ้นไป			ระบบแปลงเป็น `2 =  Positive`
+
+​	และ การบันทึกข้อมูล ห้าม ใส่ค่า `0` เพราะระบบจะไม่ส่งออกเลย หรือ `ค่าทศนิยม` เด็ดขาด เพราะ ระบบ มีการตัดทศนิยมออก ก่อนการแปลงค่า แต่ ไม่ได้เอาตัวเลขหลังทศนิยมออก ทำให้การแปลงค่า ผิดเพี้ยนได้
+
+​	หากไม่ต้องการ ให้ระบบของโปรแกรม มีการแปลงค่าอัตโนมัติ ผู้ใช้สามารถ กำหนด ค่าที่ออก มาได้ เอง โดยเมนู `Data Mapping -- Lab Value Map`  จะอยู่ในขั้นตอนที่ 6. ประมวลผล และ ส่งออกข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว)
+
+```
+ตัวอย่าง เมนู Lab Value Map	
+```
+
+![2018-12-14 008](pic/2018-12-14 008.png)
 
 >
-> เนื้อหากำลังปรับปรุง
+> เนื้อหากำลังปรับปรุง ต่อเนื่อง
 
