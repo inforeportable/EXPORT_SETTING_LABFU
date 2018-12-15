@@ -9,9 +9,12 @@ Email	: 	inforeportable@gmail.com
 เหมาะ สำหรับผู้ใช้งาน 
 
 - [ ] ผู้ใช้งานระดับเริ่มต้น
-
 - [x] ผู้ใช้งานระดับกลาง (มีการจับคู่รายการแลป , ใช้โปรแกมที่เกี่ยวข้อง มากกว่า 1 โปรแกรม)
 - [x] ผู้ใช้งานระดับสูง (มีการใช้คำสั่ง SQL , ตรวจสอบ ความถูกต้องของข้อมูล)
+
+
+
+> เนื้อหาทั้งหมดนี้เกิด จาการทดลองปฏิบัติ อย่างง่าย ๆ และการค้นคว้าจากแหล่งต่างๆ ประกอบกัน อาจะมีข้อมูล ตัวอย่าง คำอธิบาย ผิดพลาด ไม่ถูกต้อง ต้องขออภัยไว้ ณ ที่นี้ และ หากพบข้อผิดพลาดประการใด สามารถ เพิ่มเติม เนื้อหา หรือ แจ้งเข้ามาได้ที่ Email  : inforeportable@gmail.com
 
 <div style="page-break-after: always;"></div>
 
@@ -362,6 +365,7 @@ WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id
 ![2018-12-14 001](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-14 001.png)
 
 ------
+<div style="page-break-after: always;"></div>
 
 ## 4. จับคู่รายการ LAB ในระบบ และ การ Update ผล LAB  ด้วยโปรแกรม HOSxP PCU(สีเขียว) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxP%20PCU.png" width="64px" />
 
@@ -394,21 +398,33 @@ WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id
 
 ![2018-12-14 007](pic/2018-12-14 007.png)
 
-4.5  กด Update ผลแลป  2 แห่งดังนี้ 
+```
+4.5  กด Update ผลแลป 2 แห่งดังนี้
+```
 
-4.5.1 หน้าต่าง System Setting  -- Lab Link
+```
+	4.5.1 หน้าต่าง System Setting  -- Lab Link -- Update
+```
+![2018-12-16 002](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-16 002.png)
 
+มีผลต่อตาราง `opdscreen` ที่เก็บข้อมูลเดียวกับ  cc ในหน้าฟอร์ม One Stop Service
 
+```
+	4.5.2 หน้าต่าง ทะเบียนคลินิกพิเศษ เบาหวาน/ความดัน -- Update ผลตรวจแลป
+```
+![2018-12-16 001](C:\Users\zuzillio\Documents\GitHub\EXPORT_SETTING_LABFU\labfu_setting\pic\2018-12-16 001.png)
 
-
+มีผลต่อตาราง `clinicmember,clinicmember_cormobidity_screen` เพื่อเก็บประวัติการตรวจแลปครั้งล่าสุด และการคัดกรองแต่ละครั้ง แสดงที่หน้าทะเบียนคลินิกพิเศษ และ เช่น `HBA1C ,UA, CREATININE , MICRO ALBUMIN`
 
 
 
 **ข้อควรรู้ และ ต้องระวัง**
 
-​	ไม่แนะนำให้พิมพ์รายการลงไปเอง เพราะการจับคู่รายการ Lab นี้ ตัวอักษร พิมพ์เล็ก ใหญ่ ช่องว่าง อักขระ ทุกตัวมีผล หาก ไม่มีอยู่ในรายการ  จะทำให้ ระบบ หาค่าอ้างอิงไม่เจอ ไม่สามารถ นำผลแลป จาก `lab_order.lab_order_result` มาใส่ในตาราง `opdscreen`  หรือ ตารางอื่นๆ ที่เกี่ยวข้อง
+​	ไม่แนะนำให้พิมพ์รายการลงไปเอง เพราะการจับคู่รายการ Lab นี้ ตัวอักษร พิมพ์เล็ก ใหญ่ ช่องว่าง อักขระ ทุกตัวมีผลต่อการค้นหารายการ  `(case sensitive)` หาก ไม่มีอยู่ในรายการ  จะทำให้ ระบบ หาค่าอ้างอิงไม่เจอ ไม่สามารถ นำผลแลป จาก `lab_order.lab_order_result` มาใส่ในตาราง `opdscreen`  หรือ ตารางอื่นๆ ที่เกี่ยวข้อง
 
-​	รายการ ใดไม่ทราบ หรือ ไม่มี ก็ไม่ควรที่จะระบุค่าลงไป ในตัวอย่างเอกสารนี้ นำมาจาก ระบบฐานข้อมูล hosxp เริ่มต้น ที่ยังไม่มีเพิ่มเติมรายการแลปอื่นๆลงไป จะสามารถระบุค่าเริ่มต้นได้ทันทีดังนี้ ดังรูปภาพด้านบน หากรายการใดไม่มีให้เลือก ต้องทำการเพิ่ม รายการ LAB ใน ตาราง `lab_items` ก่อน แล้วจึงกลับมาทำการจับคู่รายการ LAB อีกครั้ง
+​	รายการ ใดไม่ทราบ หรือ ไม่มี ก็ไม่ควรที่จะระบุค่าลงไป 
+
+​	ในตัวอย่างเอกสารนี้ นำมาจาก ระบบฐานข้อมูล hosxp เริ่มต้น ที่ยังไม่มีเพิ่มเติมรายการแลปอื่นๆลงไป จะสามารถระบุค่าเริ่มต้นได้ทันทีดังนี้ ดังรูปภาพด้านบน หากรายการใดไม่มีให้เลือก ต้องทำการเพิ่ม รายการ LAB ใน ตาราง `lab_items` ก่อน แล้วจึงกลับมาทำการจับคู่รายการ LAB อีกครั้ง
 
 ​	แต่ยังพบว่า ยังมีรายการ LAB  อยู่อีก 4 รายการ ที่จำเป็นต่อการส่งออก เพื่อออกรายงาน แต่ไม่ทราบแน่ชัด ว่ารายการที่ถูกต้องคืออะไร 
 
@@ -419,14 +435,14 @@ WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id
 
 | รายการ Lab ในระบบ Hosxp | รหัส 7 หลัก | รายละเอียด                                                    |
 | ----------------------- | --------- | ------------------------------------------------------------ |
-| Urine Albumin           |           | ไม่ทราบ                                                       |
-| Urine Createinine       |           | ไม่ทราบ                                                       |
+| Urine Albumin           | ไม่ทราบ    | ไม่ทราบ(ต้องปรึกษาผู้เชียวชาญ)                                     |
+| Urine Createinine       | ไม่ทราบ    | ไม่ทราบ(ต้องปรึกษาผู้เชียวชาญ)                                     |
 | `Macro Albumin`         | `0440203` | การตรวจอัลบูมินในปัสสาวะ / ตรวจโปรตีน macroalbumin ในปัสสาวะ (ใน filed ผลการตรวจใส่ค่า 0=negative, 1=trace, 2=positive) |
 | `Micro Albumin`         | `0440204` | การตรวจโปรตีน microalbumin ในปัสสาวะ (ใน filed ผลการตรวจใส่ค่า 0=negative, 1=trace, 2=positive) |
 
 ​	จำเป็นต้องขอความรู้ปรึกษา จากผู้เชี่ยวชาญทางห้องปฏิบัติการ เพราะแต่ละเครือข่าย แต่ละพื้นที่ อาจจะใช้ชื่อ ที่แตกต่างกันไป หรือ บางแห่ง ใช้การจุ่มจากแถบสี จากปัสสาวะ เพื่อหาระดับ หากทำการจับคู่รายการผิดจะมีผลทันที่โดยเฉพาะ เรื่อง รายงาน ตรวจภาวะแทรกซ้อนทางไต ของผู้ป่วยเบาหวาน  เพราะชื่อที่ใกล้เคียง อาจจะทำให้ การลงผล เกิดความสับสน ได้
 
-​	ซึ่ง 2 รายการ ที่จำเป็นต้องทำการส่งออก ก็คือ รายการ ที่ `Macro Albumin , Micro Albumin` เพื่อนำไปคิด รายงาน ในระบบ `HDC` และเพื่อ ลดข้อผิดพลาด สับสน  ในตัวอย่างจะมีการเพิ่มรายการ 2 รายการนี้ เพิ่มเติมเข้าไปในระบบ ด้วยคำสั่ง SQL  และ ผ่านโปรแกรม HOSxPXE PCU(สีฟ้า) : <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxPXE%20PCU.png" width="24px" />
+​	ซึ่ง 2 รายการ ที่จำเป็นต้องทำการส่งออก ก็คือ รายการ ที่ `Macro Albumin , Micro Albumin` เพื่อนำไปคิด รายงาน ในระบบ `HDC` และเพื่อ ลดข้อผิดพลาด สับสน  ในตัวอย่างจะมีการเพิ่มรายการ 2 รายการนี้ เพิ่มเติมเข้าไปในระบบ ผ่านโปรแกรม HOSxPXE PCU(สีฟ้า) : <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxPXE%20PCU.png" width="24px" /> 
 
 ​	`Macro Albumin , Micro Albumin` มีความพิเศษ กว่ารายการ LAB ตัวอื่นๆ จากการติดตาม คำสั่ง ส่งออก ของ BMS จะมีการแทรกคำสั่ง แปลงค่าอัตโนมัติ เวลาส่งออกข้อมูลดังนี้
 
@@ -438,13 +454,112 @@ WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id
 
 ​	และ การบันทึกข้อมูล ห้าม ใส่ค่า `0` เพราะระบบจะไม่ส่งออกเลย หรือ `ค่าทศนิยม` เด็ดขาด เพราะ ระบบ มีการตัดทศนิยมออก ก่อนการแปลงค่า แต่ ไม่ได้เอาตัวเลขหลังทศนิยมออก ทำให้การแปลงค่า ผิดเพี้ยนได้
 
-​	หากไม่ต้องการ ให้ระบบของโปรแกรม มีการแปลงค่าอัตโนมัติ ผู้ใช้สามารถ กำหนด ค่าที่ออก มาได้ เอง โดยเมนู `Data Mapping -- Lab Value Map`  จะอยู่ในขั้นตอนที่ 6. ประมวลผล และ ส่งออกข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว)
+​	หากไม่ต้องการ ให้ระบบของโปรแกรม มีการแปลงค่าอัตโนมัติ ผู้ใช้สามารถ กำหนด ค่าที่ออก มาได้ เอง โดยเมนู `Data Mapping -- Lab Value Map`  จะอยู่ในขั้นตอนที่ 6. ประมวลผล และ ส่งออกข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว): <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/BMSHOSxPStandard43Export.png" width="24px" />
 
 ```
 ตัวอย่าง เมนู Lab Value Map	
 ```
 
 ![2018-12-14 008](pic/2018-12-14 008.png)
+
+<div style="page-break-after: always;"></div>
+
+## 5. ระบุ รหัสมาตรฐาน  7 หลักในระบบ ด้วยโปรแกรม HOSxPXE PCU(สีฟ้า)<img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxPXE%20PCU.png" width="64px" />
+
+```
+5.1 เปิดโปรแกรม HOSxPXE PCU(สีฟ้า)  
+	การเข้าสู่โปแกรม นี้ จะต้องผ่าน  2 หน้าต่างก่อน หน้าจอหลัก คือ เลือก สาขา และ เลือกห้องทำงาน หากได้ทำการอบรมการส่งออกข้อมูลประกันสังคม ที่โรงพยาบาลนครปฐม จะสามารถเข้าใช้งานได้ตามปกติ แต่หาก ไม่สามารถเข้าใช้งานได้ ก็สามารถแก้ไข โดย กลับไปที่ขั้นตอน 2. เปิดระบบ emergency mode และ ห้องตรวจ ผ่านเมนู SQL ด้วยโปรแกรม HOSxP PCU(สีเขียว) 
+```
+
+![2018-12-10 009](pic/2018-12-10 009.png)
+
+![2018-12-16 003](pic/2018-12-16 003.png)
+
+![2018-12-16 005](pic/2018-12-16 005.png)
+
+```
+5.2 เข้าที่เมนู Tool -- Lab -- รายการ Lab Tests
+```
+
+![2018-12-16 004](pic/2018-12-16 004.png)
+
+```
+5.3 แก้ไขรายการ หรือ หากต้องการเพิ่มรายการ สามารถ กด ปุ่ม เพิ่ม ได้ 
+- เลือกรายการ ที่ต้องการ ในตัวอย่างเลือก Glucose
+- ใส่รหัส 7 หลักมาตรฐาน
+- เลือก Active เพื่อให้เปิดการใช้งาน
+- หลังจากนั้นกด บันทึก
+```
+การแก้ไข เพิ่ม รหัส รายการ 7หลัก
+![2018-12-16 007](pic/2018-12-16 007.png)
+การเพิ่ม รายการ LAB
+![2018-12-16 008](pic/2018-12-16 008.png)
+![2018-12-16 009](pic/2018-12-16 009.png)
+
+> ทำจนครบทุกรายการ หรือ เลือกทำเฉพาะบางรายการที่จำเป็น ต้องรายผล **แต่ต้องมีอย่างน้อย  21 รายการ ขึ้นไป** เพื่อให้สามารถส่งออก 43 แฟ้ม ได้ครบเท่ากับรายการ ที่บันทึก
+>
+
+ในฐานข้อมูลตัวอย่าง ฉบับบนี้เลือกทำในรายการดังนี้ 23 รายการ
+
+| ชื่อรายการ  `(lab_items_name)` | รหัส 7 หลัก `(provis_labcode)` | หมายเหตุ |
+| ------------------------------------------- | ------------------------------------------- | ------- |
+| Hb                                          | 0621401                                     | มีอยู่แล้วในรายการของระบบ |
+| Hct                                         | 0621201                                     | มีอยู่แล้วในรายการของระบบ |
+| Glucose                                     | 0531002                                     | มีอยู่แล้วในรายการของระบบ |
+| BUN                                         | 0583001                                     | มีอยู่แล้วในรายการของระบบ |
+| Creatinine                                  | 0581902                                     | มีอยู่แล้วในรายการของระบบ |
+| Na                                          | 0511602                                     | มีอยู่แล้วในรายการของระบบ |
+| K                                           | 0511402                                     | มีอยู่แล้วในรายการของระบบ |
+| Cl                                          | 0510602                                     | มีอยู่แล้วในรายการของระบบ |
+| Acid phosphatase                            | 0490602                                     | มีอยู่แล้วในรายการของระบบ |
+| HDL                                         | 0541202                                     | มีอยู่แล้วในรายการของระบบ |
+| LDL                                         | 0541402                                     | มีอยู่แล้วในรายการของระบบ |
+| SGOT                                        | 0491802                                     | มีอยู่แล้วในรายการของระบบ |
+| SGPT                                        | 0491002                                     | มีอยู่แล้วในรายการของระบบ |
+| Cholesterol                                 | 0541602                                     | มีอยู่แล้วในรายการของระบบ |
+| Triglyceride                                | 0546602                                     | มีอยู่แล้วในรายการของระบบ |
+| T4                                          | 0590202                                     | มีอยู่แล้วในรายการของระบบ |
+| T3                                          | 0591602                                     | มีอยู่แล้วในรายการของระบบ |
+| TSH                                         | 0592202                                     | มีอยู่แล้วในรายการของระบบ |
+| FT4                                         | 0590402                                     | มีอยู่แล้วในรายการของระบบ |
+| VDRL                                        | 0721297                                     | มีอยู่แล้วในรายการของระบบ |
+| HbA1C                                       | 0531601                                     | มีอยู่แล้วในรายการของระบบ |
+| microalbumin ในปัสสาวะ                       | 0440204                                     | `เพิ่มเอง เพื่อลดความสับสน` |
+| macroalbumin ในปัสสาวะ                       | 0440203                   |`เพิ่มเอง เพื่อลดความสับสน`|
+
+หรือ ผ่าน คำสั่ง SQL ดังนี้
+
+```mysql
+update lab_items set provis_labcode = "0621401" ,active_status = "Y" where lab_items_name = "Hb" ;
+update lab_items set provis_labcode = "0621201" ,active_status = "Y" where lab_items_name = "Hct" ;
+update lab_items set provis_labcode = "0531002" ,active_status = "Y" where lab_items_name = "Glucose" ;
+update lab_items set provis_labcode = "0583001" ,active_status = "Y" where lab_items_name = "BUN" ;
+update lab_items set provis_labcode = "0581902" ,active_status = "Y" where lab_items_name = "Creatinine" ;
+update lab_items set provis_labcode = "0511602" ,active_status = "Y" where lab_items_name = "Na" ;
+update lab_items set provis_labcode = "0511402" ,active_status = "Y" where lab_items_name = "K" ;
+update lab_items set provis_labcode = "0510602" ,active_status = "Y" where lab_items_name = "Cl" ;
+update lab_items set provis_labcode = "0490602" ,active_status = "Y" where lab_items_name = "Acid phosphatase" ;
+update lab_items set provis_labcode = "0541202" ,active_status = "Y" where lab_items_name = "HDL" ;
+update lab_items set provis_labcode = "0541402" ,active_status = "Y" where lab_items_name = "LDL" ;
+update lab_items set provis_labcode = "0491802" ,active_status = "Y" where lab_items_name = "SGOT" ;
+update lab_items set provis_labcode = "0491002" ,active_status = "Y" where lab_items_name = "SGPT" ;
+update lab_items set provis_labcode = "0541602" ,active_status = "Y" where lab_items_name = "Cholesterol" ;
+update lab_items set provis_labcode = "0546602" ,active_status = "Y" where lab_items_name = "Triglyceride" ;
+update lab_items set provis_labcode = "0590202" ,active_status = "Y" where lab_items_name = "T4" ;
+update lab_items set provis_labcode = "0591602" ,active_status = "Y" where lab_items_name = "T3" ;
+update lab_items set provis_labcode = "0592202" ,active_status = "Y" where lab_items_name = "TSH" ;
+update lab_items set provis_labcode = "0590402" ,active_status = "Y" where lab_items_name = "FT4" ;
+update lab_items set provis_labcode = "0721297" ,active_status = "Y" where lab_items_name = "VDRL" ;
+update lab_items set provis_labcode = "0531601" ,active_status = "Y" where lab_items_name = "HbA1C" ;
+```
+
+> ​	จากตัวอย่างรายการ จะเห็นได้ว่า ในการบันทึก รายงานผลจริงนั้น  อาจจะมีรายการ ที่ยังไม่มี 23 รายการที่เสนอไว้เป็นตัวอย่างเบื้องต้น หรือ บางรายการ ที่มีอยู่ใน 23 รายการที่เสนอไว้เป็นตัวอย่างด้วย
+> ​	เหตุผล เพื่อ ให้ตรงเงื่อนไขที่ต้องมีอย่างน้อย 21 รายการ ขึ้นไป เท่านั้น ทำขึ้นมาเพื่อเป็นตัวอย่าง อย่างง่าย หากมีรายการใดที่จำเป็นต้องการส่งออก ก็สามารถเพิ่มรหัส 7 หลักเองได้ เช่น UA ,UPCR ,BLOOD GROUP หรือรายการอื่นๆ
+
+
+
+
+
 
 >
 > เนื้อหากำลังปรับปรุง ต่อเนื่อง
