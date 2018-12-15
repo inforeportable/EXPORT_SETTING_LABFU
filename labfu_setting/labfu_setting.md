@@ -13,7 +13,7 @@ Email	: 	inforeportable@gmail.com
 - [x] ผู้ใช้งานระดับกลาง (มีการจับคู่รายการแลป , ใช้โปรแกมที่เกี่ยวข้อง มากกว่า 1 โปรแกรม)
 - [x] ผู้ใช้งานระดับสูง (มีการใช้คำสั่ง SQL , ตรวจสอบ ความถูกต้องของข้อมูล)
 
-------
+<div style="page-break-after: always;"></div>
 
 # ที่มาของปัญหา
 
@@ -127,8 +127,6 @@ $$
 
 
 
-------
-
 # ขั้นตอนการแก้ไข
 
 1. ติดตั้งโปรแกรมที่เกี่ยวข้องให้ครบถ้วน
@@ -149,7 +147,7 @@ $$
 
 6. ประมวลผล และ ส่งออกข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว)
 
-------
+<div style="page-break-after: always;"></div>
 
 ## 1.ติดตั้งโปรแกรมที่เกี่ยวข้องให้ครบถ้วน
 
@@ -253,7 +251,7 @@ $$
 
 ![2018-12-10 008](https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/labfu_setting/pic/2018-12-10 008.png)
 
-------
+<div style="page-break-after: always;"></div>
 
 ## 2. เปิดระบบ emergency mode และ ห้องตรวจ ผ่านเมนู SQL ด้วยโปรแกรม HOSxP PCU(สีเขียว) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/HOSxP%20PCU.png" width="64px" />
 
@@ -313,8 +311,7 @@ UPDATE hospital_department
 SET hospital_department.NAME = ( SELECT opdconfig.hospitalname FROM opdconfig)
 WHERE hospital_department.id = ( SELECT min(kskdepartment.hospital_department_id) FROM kskdepartment)
 ```
-
-------
+<div style="page-break-after: always;"></div>
 
 ## 3. ปรับปรุงโครงสร้างฐานข้อมูล ด้วยโปรแกรม BMSHOSxPStandard43Export(สีขาว) <img src="https://raw.githubusercontent.com/inforeportable/EXPORT_SETTING_LABFU/master/Pic/BMSHOSxPStandard43Export.png" width="64px" />
 > คำเตือน 
